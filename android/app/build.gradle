@@ -1,13 +1,27 @@
 apply plugin: 'com.android.application'
 
+import groovy.json.JsonSlurper
+
+// Ref: https://stackoverflow.com/a/54146923
+def getVersionFromNpm() {
+  //  Read and parse package.json file from project root
+  def inputFile = new File("$rootDir/../package.json")
+  def packageJson = new JsonSlurper().parseText(inputFile.text)
+
+  // Return the version, you can get any value this way
+  return packageJson["version"]
+}
+
+apply from: 'versioning.gradle'
+
 android {
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         applicationId "aica.starter.io"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionName getVersionFromNpm()
+        versionCode buildVersionCode(versionName)
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         aaptOptions {
              // Files and dirs to omit from the packaged assets dir, modified to accommodate modern web apps.
@@ -19,6 +33,12 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        debug {
+          applicationIdSuffix ".debug"
+          versionNameSuffix "-debug"
+          debuggable true
         }
     }
 }

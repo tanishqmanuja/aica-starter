@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">aica-starter</string>
+    <string name="title_activity_main">aica-starter</string>
+    <string name="package_name">aica.starter.io</string>
+    <string name="custom_url_scheme">aica.starter.io</string>
+</resources>

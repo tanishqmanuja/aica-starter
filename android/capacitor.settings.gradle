@@ -7,3 +7,6 @@ project(':aashu-dubey-capacitor-statusbar-safe-area').projectDir = new File('../
 
 include ':capacitor-status-bar'
 project(':capacitor-status-bar').projectDir = new File('../node_modules/@capacitor/status-bar/android')
+
+include ':tanishqmanuja-capacitor-plugin-monet'
+project(':tanishqmanuja-capacitor-plugin-monet').projectDir = new File('../node_modules/@tanishqmanuja/capacitor-plugin-monet/android')

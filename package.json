@@ -24,7 +24,7 @@
     "@capacitor/core": "4.5.0",
     "@capacitor/status-bar": "^4.1.0",
     "@ionic/angular": "^6.1.9",
-    "@tanishqmanuja/capacitor-plugin-monet": "^0.1.0",
+    "@tanishqmanuja/capacitor-plugin-monet": "^0.1.1",
     "ionicons": "^6.0.3",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

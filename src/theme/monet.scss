@@ -1,5 +1,6 @@
 /** Monet CSS Variables **/
-:root {
+
+:where(html:not(.plt-android)) {
   /** accent 1 **/
   --md3-a1-0: #ccffff;
   --md3-a1-10: #c8fcff;

@@ -5,6 +5,9 @@ project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/
 include ':aashu-dubey-capacitor-statusbar-safe-area'
 project(':aashu-dubey-capacitor-statusbar-safe-area').projectDir = new File('../node_modules/@aashu-dubey/capacitor-statusbar-safe-area/android')
 
+include ':aparajita-capacitor-dark-mode'
+project(':aparajita-capacitor-dark-mode').projectDir = new File('../node_modules/@aparajita/capacitor-dark-mode/android')
+
 include ':capacitor-status-bar'
 project(':capacitor-status-bar').projectDir = new File('../node_modules/@capacitor/status-bar/android')
 

@@ -1,1 +1,65 @@
+:host {
+  --height-tab-bar: 56px;
 
+  --fs-label: clamp(10px, 2.95vw, 0.98rem);
+  --fs-icon: 1.325rem;
+
+  --clr-text: var(--md3-a2-400);
+  --clr-icon: var(--clr-text);
+  --clr-text-active: var(--md3-a2-800);
+  --clr-icon-active: var(--clr-text-active);
+  --clr-icon-bg-active: var(--md3-a2-200);
+}
+
+:host-context(.dark) {
+  --clr-text: var(--md3-n2-300);
+  --clr-text-active: var(--md3-n2-100);
+  --clr-icon-active: var(--md3-a2-100);
+  --clr-icon-bg-active: var(--md3-a2-700);
+}
+
+ion-tab-bar {
+  height: var(--height-tab-bar);
+  padding-inline: 0px;
+  padding-block: 4px;
+  --border: none;
+  box-shadow: 0 0 3px rgb(0 0 0 / 6%);
+
+  ion-tab-button {
+    --padding-end: 0;
+    --padding-start: 0;
+    --ripple-color: transparent;
+
+    ion-icon {
+      margin-top: 1px;
+      margin-bottom: 2px;
+      font-size: var(--fs-icon);
+      padding-block: 0.32rem;
+      padding-inline: 1.33rem;
+      border-radius: 2rem;
+      color: var(--clr-icon);
+      background-color: transparent;
+      transition: color 200ms 100ms ease-in-out, background 200ms ease-in-out;
+    }
+
+    ion-label {
+      font-size: var(--fs-label);
+      font-weight: bold;
+      color: var(--clr-text);
+      margin-top: 1px;
+      margin-bottom: 0;
+      transition: color 250ms ease-in-out;
+    }
+
+    &[aria-selected="true"] {
+      ion-icon {
+        color: var(--clr-icon-active);
+        background-color: var(--clr-icon-bg-active);
+      }
+
+      ion-label {
+        color: var(--clr-text-active);
+      }
+    }
+  }
+}

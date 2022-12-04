@@ -13,3 +13,7 @@
   --fs-500: clamp(0.8rem, 3.4vw, 1rem);
   --fs-400: clamp(0.65rem, 3vw, 0.8rem);
 }
+
+:root {
+  --header-min-height: 8vh;
+}

@@ -1,0 +1,37 @@
+:host {
+  --height: calc(100% - var(--height-tab-bar));
+  --content-padding-start: var(--app-side-clearance);
+  --content-padding-end: var(--app-side-clearance);
+  --content-padding-top: 0px;
+  --content-padding-bottom: 0px;
+
+  height: var(--height);
+}
+
+ion-header {
+  --clr-bg: var(--ion-background-color);
+  background-color: var(--clr-bg);
+  padding-top: var(--status-bar-height);
+
+  ion-toolbar {
+    --background: var(--clr-bg);
+    ion-title {
+      font-family: "Open Sans", sans;
+      font-size: var(--fs-700);
+      font-weight: normal;
+    }
+  }
+
+  &.md3-header-collapsed {
+    --clr-bg: var(--ion-toolbar-background);
+    box-shadow: 0 0 3px rgb(0 0 0 / 6%);
+  }
+}
+
+ion-content {
+  height: 100%;
+  --padding-start: var(--content-padding-start);
+  --padding-end: var(--content-padding-end);
+  --padding-top: var(--content-padding-top);
+  --padding-bottom: var(--content-padding-bottom);
+}

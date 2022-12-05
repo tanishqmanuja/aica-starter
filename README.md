@@ -4,6 +4,7 @@ AICA stand for Angular Ionic Capacitor Android. This repo helps me quickly setup
 
 ## Plugin used
 
+- @capacitor/app
 - @capacitor/status-bar
 - @aashu-dubey/capacitor-statusbar-safe-area
 - @tanishqmanuja/capacitor-plugin-monet

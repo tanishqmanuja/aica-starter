@@ -10,7 +10,7 @@ import { MonetController } from '@tanishqmanuja/capacitor-plugin-monet';
 export class ThemeService {
   constructor() {}
 
-  init() {
+  async onAppInit() {
     SafeAreaController.injectCSSVariables();
     MonetController.autoInjectStyle();
 

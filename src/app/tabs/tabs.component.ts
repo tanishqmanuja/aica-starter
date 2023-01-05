@@ -5,6 +5,7 @@ import {
   EnvironmentInjector,
   ViewChild,
 } from '@angular/core';
+import { Router } from '@angular/router';
 import { App } from '@capacitor/app';
 import { IonicModule, IonTabs, Platform } from '@ionic/angular';
 
@@ -42,7 +43,8 @@ export default class TabsComponent implements AfterViewInit {
 
   constructor(
     private platform: Platform,
-    public environmentInjector: EnvironmentInjector
+    public environmentInjector: EnvironmentInjector,
+    private router: Router
   ) {}
 
   ngAfterViewInit() {
@@ -53,7 +55,12 @@ export default class TabsComponent implements AfterViewInit {
           defaultTab?.routerPath &&
           this.ionTabs.getSelected() !== defaultTab.routerPath
         ) {
-          this.ionTabs.select(defaultTab.routerPath);
+          const urlTree = this.router.parseUrl(this.router.url);
+          if (urlTree.root.children['primary'].segments.length > 1) return;
+
+          const firstPath = urlTree.root.children['primary'].segments[0].path;
+          if (this.tabs.findIndex((it) => it.routerPath === firstPath) > -1)
+            this.ionTabs.select(defaultTab.routerPath);
         } else {
           App.exitApp();
         }

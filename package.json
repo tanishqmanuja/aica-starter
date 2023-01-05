@@ -27,6 +27,7 @@
     "@capacitor/status-bar": "4.1.1",
     "@ionic/angular": "6.3.9",
     "@tanishqmanuja/capacitor-plugin-monet": "^0.1.2",
+    "@tanishqmanuja/ionic-color-injector": "^0.1.1",
     "ionicons": "^6.0.3",
     "rxjs": "7.6.0",
     "tslib": "^2.3.0",

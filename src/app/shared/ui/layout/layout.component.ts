@@ -36,6 +36,10 @@ export default class LayoutComponent implements AfterViewInit {
   private isHeaderCollapsed = false;
   private triggerDistance = 40;
 
+  constructor(private elRef: ElementRef) {
+    this.elRef.nativeElement.classList.add('ion-page');
+  }
+
   async ngAfterViewInit() {
     this.IonContent.scrollEvents = true;
     this.IonContent.ionScroll.subscribe(

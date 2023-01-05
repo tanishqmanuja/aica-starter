@@ -9,6 +9,7 @@
 }
 
 ion-header {
+  --min-height: var(--app-height-header);
   --clr-bg: var(--ion-background-color);
   background-color: var(--clr-bg);
   padding-top: var(--status-bar-height);

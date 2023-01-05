@@ -7,6 +7,11 @@ const tabsRoutes: Routes = [
     component: TabsComponent,
     children: [
       {
+        path: '',
+        redirectTo: '/home',
+        pathMatch: 'full',
+      },
+      {
         path: 'showcase',
         loadComponent: () => import('../showcase/showcase.component'),
       },

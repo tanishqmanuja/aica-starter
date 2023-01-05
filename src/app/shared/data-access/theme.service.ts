@@ -4,6 +4,7 @@ import { DarkMode } from '@aparajita/capacitor-dark-mode';
 import { Capacitor } from '@capacitor/core';
 import { StatusBar, Style } from '@capacitor/status-bar';
 import { MonetController } from '@tanishqmanuja/capacitor-plugin-monet';
+import { injectIonicColor } from '@tanishqmanuja/ionic-color-injector';
 import { take, tap } from 'rxjs';
 import { isDarkMode } from '../util/prefers-color-scheme';
 @Injectable({
@@ -14,7 +15,11 @@ export class ThemeService {
 
   async onAppInit() {
     SafeAreaController.injectCSSVariables();
-    MonetController.autoInjectStyle();
+    const cs = await MonetController.autoInjectStyle();
+
+    injectIonicColor('primary', cs.accent1[600], cs.accent1[500]);
+    injectIonicColor('secondary', cs.accent2[600], cs.accent2[500]);
+    injectIonicColor('tertiary', cs.accent3[600], cs.accent3[500]);
 
     DarkMode.configure({
       syncStatusBar: true,

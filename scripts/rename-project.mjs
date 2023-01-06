@@ -29,6 +29,15 @@ const renameProject = async (opts) => {
     });
     console.log(capacitorConfigPath, ":", capacitorConfigRes[0].hasChanged);
 
+    // build.gradle
+    const buildGradlePath = join(ROOT_PATH, "./android/app/build.gradle");
+    const buildGradleRes = await replace({
+      files: buildGradlePath,
+      from: /aica.starter.io/g,
+      to: opts.appId,
+    });
+    console.log(buildGradlePath, ":", buildGradleRes[0].hasChanged);
+
     // strings.xml
     const stringsXmlPath = join(
       ROOT_PATH,
